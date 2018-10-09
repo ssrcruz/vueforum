@@ -17,9 +17,7 @@ export default {
   },
   data () {
     return {
-      threads: Object.values(sourceData.threads),
-      posts: sourceData.posts,
-      users: sourceData.users
+      threads: Object.values(sourceData.threads)
     }
   }
 }

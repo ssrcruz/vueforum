@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <router-view/>
-    </div>
+  <div class="container">
+    <router-view/> <!-- Make all routes available for our components -->
   </div>
 </template>
 

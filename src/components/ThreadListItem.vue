@@ -35,7 +35,7 @@
       },
 
       user () {
-        return sourceData.users[this.thread.userId]
+        return sourceData.users[this.thread.userId] // returns user who created the thread
       }
     }
   }

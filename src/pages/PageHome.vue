@@ -7,10 +7,11 @@
 
 <script>
 import sourceData from '@/data' // @ symbol refers to the src folder
-import ThreadList from './ThreadList'
+import ThreadList from '@/components/ThreadList'
 console.log(sourceData)
+
 export default {
-  name: 'HelloWorld',
+  name: 'PageHome',
   components: {
     ThreadList
   },

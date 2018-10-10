@@ -1,23 +1,24 @@
 <template>
   <div class="col-full">
     <h1>Welcome to the Forum</h1>
-    <ThreadList :threads="threads"/>
+    <ForumList :forums="forums"/>
   </div>
 </template>
 
 <script>
 import sourceData from '@/data' // @ symbol refers to the src folder
-import ThreadList from '@/components/ThreadList'
+import ForumList from '@/components/ForumList'
 console.log(sourceData)
 
 export default {
   name: 'PageHome',
   components: {
-    ThreadList
+    ForumList
   },
   data () {
     return {
-      threads: Object.values(sourceData.threads)
+      threads: Object.values(sourceData.threads),
+      forums: Object.values(sourceData.forums)
     }
   }
 }

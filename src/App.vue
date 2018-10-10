@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <router-view/> <!-- Make all routes available for our components -->
+    <router-view/> <!-- Make all routes available globally -->
   </div>
 </template>
 

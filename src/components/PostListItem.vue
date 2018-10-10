@@ -12,15 +12,13 @@
         {{post.text}}
       </div>
     </div>
-    <div class="post-date text-faded" :title="post.publishedAt | humanFriendlyDate">
-      {{post.publishedAt | diffForHumans}}
-    </div>
+    <AppDate class="post-date text-faded" :timestamp="post.publishedAt"/>
   </div>
 </template>
 
 <script>
   import sourceData from '@/data'
-  import moment from 'moment'
+  import AppDate from './AppDate'
 
   export default {
     props: {
@@ -29,6 +27,9 @@
         type: Object
       }
     },
+    components: {
+      AppDate
+    },
     computed: {
       user () {
         return sourceData.users[this.post.userId] // returns a user who wrote the post
@@ -36,15 +37,6 @@
 
       userPostsCount () {
         return Object.keys(this.user.posts).length // User posts
-      }
-    },
-    filters: { // filter methods are like normal methods instead they are used to apply text formatting
-      humanFriendlyDate (date) { // can be used in the view like -> {{ date | humanFriendlyDate }} or use v-bind, date would be the var passed into the function
-        return moment.unix(date).format('MMMM do YYYY, h:mm:ss a') // Ex: October 2nd, 2018 4:29:59 pm
-      },
-
-      diffForHumans (date) {
-        return moment.unix(date).fromNow()
       }
     }
   }

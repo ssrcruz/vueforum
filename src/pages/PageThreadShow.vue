@@ -35,15 +35,12 @@
       }
     },
     methods: {
-      addPost (eventData) {
-        const post = eventData.post
-        const postId = eventData.post['.key']
+      addPost ({post}) { // destructuring assignment: Unpacks the post property from the event data object into it's own variable
+        const postId = post['.key']
         // sourceData.posts[postId] = post // append new post into posts object
         // this.thread.posts[postId] = post // append new post into the list of posts for the specific thread
-
         // $set(obj, propertyName, value)
         // Using $set method updates the components with the new post (reactive)
-
         this.$set(sourceData.posts, postId, post)
         this.$set(this.thread.posts, postId, postId)
         this.$set(sourceData.users[post.userId].posts, postId, postId)

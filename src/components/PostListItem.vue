@@ -12,26 +12,15 @@
         {{post.text}}
       </div>
     </div>
-    <div class="post-date text-faded">
-      {{post.publishedAt}}
-    </div>
-    <div class="reactions">
-      <ul>
-          <li>💡</li>
-          <li>❤️</li>
-          <li>👎</li>
-          <li>👍</li>
-          <li>👌</li>
-      </ul>
-      <button class="btn-xsmall"><span class="emoji">❤️</span>️ 3</button>
-      <button class="btn-xsmall active-reaction"><span class="emoji">👌️</span>️ 1</button>
-      <button class="btn-xsmall">+ <i class="fa fa-smile-o emoji"></i></button>
+    <div class="post-date text-faded" :title="post.publishedAt | humanFriendlyDate">
+      {{post.publishedAt | diffForHumans}}
     </div>
   </div>
 </template>
 
 <script>
   import sourceData from '@/data'
+  import moment from 'moment'
 
   export default {
     props: {
@@ -47,6 +36,15 @@
 
       userPostsCount () {
         return Object.keys(this.user.posts).length // User posts
+      }
+    },
+    filters: { // filter methods are like normal methods instead they are used to apply text formatting
+      humanFriendlyDate (date) { // can be used in the view like -> {{ date | humanFriendlyDate }} or use v-bind, date would be the var passed into the function
+        return moment.unix(date).format('MMMM do YYYY, h:mm:ss a') // Ex: October 2nd, 2018 4:29:59 pm
+      },
+
+      diffForHumans (date) {
+        return moment.unix(date).fromNow()
       }
     }
   }

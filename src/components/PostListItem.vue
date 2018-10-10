@@ -18,7 +18,6 @@
 
 <script>
   import sourceData from '@/data'
-  import AppDate from './AppDate'
 
   export default {
     props: {
@@ -26,9 +25,6 @@
         required: true,
         type: Object
       }
-    },
-    components: {
-      AppDate
     },
     computed: {
       user () {

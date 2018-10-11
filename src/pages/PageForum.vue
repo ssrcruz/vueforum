@@ -10,14 +10,14 @@
       </div>
     </div>
 
-    <div class="col-full">
+    <!-- <div class="col-full">
       <div class="category-item">
         <div class="forum-list">
           <h2 class="list-title">Recipes</h2>
           <div class="forum-listing">
             <div class="forum-details">
               <a href="#" class="forum-name">Recipes</a>
-              <p class="forum-description ">Recipes, Guides and Tips & Tricks</p>
+              <p class="forum-description">Recipes, Guides and Tips & Tricks</p>
             </div>
             <div class="threads-count">
               <p class="count text-lead">1</p> threads
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-full push-top">
       <ThreadList :threads="threads"/>

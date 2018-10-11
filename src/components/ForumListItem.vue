@@ -2,7 +2,7 @@
   <div class="forum-listing">
     <div class="forum-details">
       <router-link class="text-xlarge" :to="{name: 'Forum', params: {id: forum['.key']}}">
-        <a href="forum.html" class="text-xlarge">{{forum.name}}</a>
+        <a class="text-xlarge">{{forum.name}}</a>
       </router-link>
       <p>{{forum.description}}</p>
     </div>

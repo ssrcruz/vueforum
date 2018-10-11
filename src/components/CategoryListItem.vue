@@ -1,15 +1,11 @@
 <template>
-  <div class="container">
-    <div class="col-full">
-      <div class="forum-list">
-        <h2 class="list-title">
-          <router-link :to="{name: 'Category', params: {id: category['.key']}}">
-            {{category.name}}
-          </router-link>
-        </h2>
-        <ForumList :forums="categoryForums" :category="category"/>
-      </div>
-    </div>
+  <div class="forum-list">
+    <h2 class="list-title">
+      <router-link :to="{name: 'Category', params: {id: category['.key']}}">
+        {{category.name}}
+      </router-link>
+    </h2>
+    <ForumList :forums="categoryForums" :category="category"/>
   </div>
 </template>
 

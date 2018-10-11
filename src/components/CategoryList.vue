@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <CategoryListItem
-      v-for="category in categories"
-      :category="category"
-      :key="category['.key']"
-    />
+  <div class="container">
+    <div class="col-full">
+      <CategoryListItem
+        v-for="category in categories"
+        :category="category"
+        :key="category['.key']"
+      />
+    </div>
   </div>
 </template>
 

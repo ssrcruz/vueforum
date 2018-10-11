@@ -17,8 +17,6 @@ export default {
   },
   data () {
     return {
-      threads: Object.values(sourceData.threads),
-      forums: Object.values(sourceData.forums),
       categories: Object.values(sourceData.categories)
     }
   }

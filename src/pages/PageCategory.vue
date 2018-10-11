@@ -1,5 +1,6 @@
 <template>
-  <div class="categoryWrapper">
+  <div class="col-full">
+    <h2>{{category.name}}</h2>
     <CategoryListItem :category="category"/>
   </div>
 </template>
@@ -24,9 +25,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .categoryWrapper {
-    width: 100%;
-  }
-</style>

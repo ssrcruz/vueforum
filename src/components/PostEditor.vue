@@ -41,7 +41,8 @@
         }
         this.text = ''
 
-        this.$emit('save', {post})
+        this.$emit('save', {post}) // destructuring assignment: Unpacks the post property from the event data object into it's own variable
+        this.$store.dispatch('createPost', post)
       }
     }
   }

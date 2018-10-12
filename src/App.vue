@@ -1,13 +1,20 @@
 <template>
-  <div class="container">
-    <router-view/> <!-- Make all routes available globally -->
+  <div>
+    <TheNavbar />
+    <div class="container">
+      <router-view/> <!-- Make all routes available globally -->
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import TheNavbar from '@/components/TheNavbar'
+
+  export default {
+    components: {
+      TheNavbar
+    }
+  }
 </script>
 
 <style>

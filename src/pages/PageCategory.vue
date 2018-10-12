@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import sourceData from '@/data'
   import CategoryListItem from '@/components/CategoryListItem'
+  
   export default {
     props: {
       id: {
@@ -15,12 +15,14 @@
         type: String
       }
     },
+
     components: {
       CategoryListItem
     },
+
     computed: {
       category () {
-        return sourceData.categories[this.id] // finds & returns the right category from sourceData.categories
+        return this.$store.state.categories[this.id] // finds & returns the right category from sourceData.categories
       }
     }
   }

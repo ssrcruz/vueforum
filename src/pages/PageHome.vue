@@ -6,18 +6,17 @@
 </template>
 
 <script>
-import sourceData from '@/data' // @ symbol refers to the src folder
 import CategoryList from '@/components/CategoryList'
-console.log(sourceData)
-
+// this.$store.state.categories
 export default {
   name: 'PageHome',
   components: {
     CategoryList
   },
-  data () {
-    return {
-      categories: Object.values(sourceData.categories)
+
+  computed: {
+    categories () {
+      return Object.values(this.$store.state.categories)
     }
   }
 }

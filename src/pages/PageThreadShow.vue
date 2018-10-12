@@ -11,30 +11,34 @@
 </template>
 
 <script>
-  import sourceData from '@/data' // @ symbol refers to the src folder
   import PostList from '@/components/PostList'
   import PostEditor from '@/components/PostEditor'
+
   export default {
     name: 'PageThreadShow',
+
     props: {
       id: {
         required: true,
         type: String
       }
     },
+
     components: {
       PostList,
       PostEditor
     },
+
     data () {
       return {
-        thread: sourceData.threads[this.id]
+        thread: this.$store.state.threads[this.id]
       }
     },
+
     computed: { // Computed functions are used for complex logic and will only re-evaluate when some of its dependencies have changed
       posts () { // grabs all the posts belonging a thread
         const postIds = Object.values(this.thread.posts)
-        return Object.values(sourceData.posts)
+        return Object.values(this.$store.state.posts)
           .filter(post => postIds.includes(post['.key']))
       }
     },
@@ -45,9 +49,9 @@
         // this.thread.posts[postId] = post // append new post into the list of posts for the specific thread
         // $set(obj, propertyName, value)
         // Using $set method updates the components with the new post (reactive)
-        this.$set(sourceData.posts, postId, post)
+        this.$set(this.$store.state.posts, postId, post)
         this.$set(this.thread.posts, postId, postId)
-        this.$set(sourceData.users[post.userId].posts, postId, postId)
+        this.$set(this.$store.state.users[post.userId].posts, postId, postId)
       }
     }
   }
